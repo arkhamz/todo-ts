@@ -1,0 +1,16 @@
+
+.prev-item button{
+    border-radius: 40%;
+    border: none;
+    width: 20px;
+    cursor: pointer;
+}
+
+.prev-item svg{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.prev-item button:hover svg{
+    color:green;
+}

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import ListPreview from "../components/ListPreview";
 import useFetchLists from "../hooks/useFetchLists"
-
+import "./Home.css"
 
 //Renders todo-lists
 export default function Home(){
@@ -17,7 +17,7 @@ export default function Home(){
     console.log(data);
 
     return (
-        <div className="">
+        <div className="Home">
             {data && <ListPreview data={data} />}
             {error && <p>{error}</p>}
         </div>

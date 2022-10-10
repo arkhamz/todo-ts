@@ -1,6 +1,9 @@
 .prev-lists{
     display:flex;
+    margin-top: 100px;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     flex-wrap: wrap;
@@ -8,15 +11,12 @@
 }
 
 
-
-
-.prev-list-single{
+.prev-list{
     display:flex;
     flex-direction: column;
     align-items: center;
    height: 200px;
-    max-width: 300px;
-    margin: 0 auto;
+    min-width: 300px;;
     box-shadow: 1px 2px 2px 2px silver;
     cursor: pointer;
     border-radius: 6px;
