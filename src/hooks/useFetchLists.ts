@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import {List} from "../types/types"
 
-
-
 type payloadObj = {
 
     data: List[] | null;
@@ -11,8 +9,6 @@ type payloadObj = {
     fetchLists: () => Promise<any>;
     
 }
-
-
 
 export default function useFetchLists() :payloadObj {
 

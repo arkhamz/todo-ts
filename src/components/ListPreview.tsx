@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import { List,ListItem } from "../types/types";
-import ItemList from "./ItemList";
-// import ListItem from "./ListItem"
+import { List } from "../types/types";
+import ItemsPreview from "./ItemsPreview"
 
+// Define the component's props
 type ListPreviewProps = {
     data: List[] | null;
 }
@@ -14,11 +14,8 @@ function ListPreview({data} : ListPreviewProps){
         {data && data.map(function(list:List) : ReactNode{
             return <div key={list.id}>
                 <h2>{list.name}</h2>
-                {list.items.map(function(item :ListItem) : ReactNode{
-
-                    return <p key={item.id}>{item.content}</p>
-
-                })}
+                <ItemsPreview data={list} />
+               
             </div>
         })}
     </ul>

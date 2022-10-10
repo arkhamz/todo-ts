@@ -18,7 +18,8 @@ export default function Home(){
 
     return (
         <div className="">
-            <ListPreview data={data} />
+            {data && <ListPreview data={data} />}
+            {error && <p>{error}</p>}
         </div>
     )
 
