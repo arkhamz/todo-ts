@@ -3,7 +3,7 @@
 // a popup? overlay?
 function ItemList(){
     return <ul className="todo-list">
-        
+        {}
     </ul>
 }
 
