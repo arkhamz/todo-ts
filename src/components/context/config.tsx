@@ -1,5 +1,5 @@
-import React, { createContext, ReactNode, useReducer, useState } from "react";
-import {List, ListItem} from "../../types/types"
+import React, { createContext, ReactNode, useReducer, useContext } from "react";
+import {List} from "../../types/types"
 
 // type for a User obj - will get from firebase
 type User = {
@@ -14,18 +14,17 @@ type InitialStateType = {
     listDetail: List | null;
 }
 
+type Context = {
+    state: InitialStateType;
+    dispatch: React.Dispatch<any>;
+}
+
 const initialState  = {
     user: null,
-    token: null,
+    token: "null",
     lists: null,
     listDetail: null
 }
-
-// type Context = {
-//     state: InitialStateType;
-//     dispatch: React.Dispatch<any>;
-// }
-
 
 type ACTIONTYPES = 
     | {type: "LOGIN"; payload: User}
@@ -34,10 +33,6 @@ type ACTIONTYPES =
     | {type: "FETCH_LISTS"; payload: List[]}
     | {type: "FETCH_LIST_DETAIL"; payload: List}
     | {type: "CLEAR_LIST_DETAIL"; payload: null};
-
-
-// // export type Dispatch = (action:ACTIONTYPES) => void;
-// export type Dispatch = (action:ACTIONTYPES) => void;
 
 export const AppContext = createContext<{
     state: InitialStateType;
@@ -88,15 +83,20 @@ export function appReducer(state: InitialStateType, action: ACTIONTYPES ){
 }
 
 export function AppContextProvider({children}: {children:ReactNode}){
-
     const [state,dispatch] = useReducer(appReducer,initialState);
-    
-
     return (
         <AppContext.Provider value={{state, dispatch}}>
             {children}
         </AppContext.Provider>
     )
+}
 
+// COmponent that returns context value
+//returns useCOntext(context)
+// could it also be a normal function?
 
+export function ConsumeContext() :Context{
+
+        //return obj of state and value
+    return useContext(AppContext);
 }
