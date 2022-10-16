@@ -31,8 +31,8 @@ type ACTIONTYPES =
     | {type: "LOGOUT"; payload: null}
     | {type: "COMPLETED"; payload: List }
     | {type: "FETCH_LISTS"; payload: List[]}
-    | {type: "FETCH_LIST_DETAIL"; payload: List}
-    | {type: "CLEAR_LIST_DETAIL"; payload: null};
+    | {type: "SET_DETAIL"; payload: List}
+    | {type: "CLEAR_DETAIL"; payload: null};
 
 export const AppContext = createContext<{
     state: InitialStateType;
@@ -69,10 +69,10 @@ export function appReducer(state: InitialStateType, action: ACTIONTYPES ){
         case "FETCH_LISTS":
             return {...state, lists: action.payload};
 
-        case "FETCH_LIST_DETAIL":
+        case "SET_DETAIL":
             return {...state, listDetail: action.payload};
 
-        case "CLEAR_LIST_DETAIL":
+        case "CLEAR_DETAIL":
             return {...state, listDetail: null};
             
 
@@ -84,6 +84,7 @@ export function appReducer(state: InitialStateType, action: ACTIONTYPES ){
 
 export function AppContextProvider({children}: {children:ReactNode}){
     const [state,dispatch] = useReducer(appReducer,initialState);
+
     return (
         <AppContext.Provider value={{state, dispatch}}>
             {children}

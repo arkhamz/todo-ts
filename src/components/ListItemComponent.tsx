@@ -6,16 +6,16 @@ import "./ListItemComponent.css"
 
 function ListItemComponent({listItem}: {listItem: ListItem}) {
 
-    const [done,setDone] = useState<boolean>(false);
+    // const [done,setDone] = useState<boolean>(false);
 
-    function handleComplete(){
-        setDone(true);
-    }
+    // function handleComplete(){
+    //     setDone(true);
+    // }
 
     return(
         <div key={listItem.id} className="prev-item">
-                <span style={{color: (done ? "grey" : "inherit")}}>{listItem.content}</span>
-                {!done && <button onClick={handleComplete}><AiOutlineCheck/></button>}
+                <span style={{color: (listItem.completed ? "grey" : "inherit")}}>{listItem.content}</span>
+                <button ><AiOutlineCheck/></button>
             </div>
     )
 
