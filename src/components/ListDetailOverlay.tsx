@@ -30,10 +30,10 @@ export default function ListDetailOverlay(props: OverlayProps){
                      return <ListItemComponent listItem={listItem} key={listItem.id} />
                  })}
              </ul>
-             <button onClick={e => {
+             <button className="btn-close" onClick={e => {
                 props.closeOverlay();
                 dispatch({type: "CLEAR_DETAIL"})
-             }}>Close Window</button>
+             }}>X</button>
             </div>
         )}
         </>
