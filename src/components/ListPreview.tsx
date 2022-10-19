@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { List } from "../types/types";
-import { ConsumeContext } from "./context/config";
+import { ConsumeContext } from "../context/config";
 import ItemsPreview from "./ItemsPreview"
 import "./ListPreview.css";
 

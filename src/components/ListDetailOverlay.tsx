@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ListItem, List } from "../types/types";
 import ListItemComponent from "./ListItemComponent";
-import { ConsumeContext } from "./context/config";
+import { ConsumeContext } from "../context/config";
 import "./ListDetailOverlay.css";
 
 type OverlayProps = {

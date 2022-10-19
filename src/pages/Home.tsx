@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ListPreview from "../components/ListPreview";
 import useFetchLists from "../hooks/useFetchLists"
 import "./Home.css"
-import { ConsumeContext } from "../components/context/config";
+import { ConsumeContext } from "../context/config";
 import ListDetailOverlay from "../components/ListDetailOverlay";
 
 //Renders todo-lists

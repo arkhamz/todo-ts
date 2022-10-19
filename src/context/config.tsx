@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useReducer, useContext } from "react";
-import {List} from "../../types/types"
+import {List} from "../types/types"
 
 // type for a User obj - will get from firebase
 type User = {
